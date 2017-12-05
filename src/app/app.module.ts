@@ -11,11 +11,12 @@ import { HomeComponent } from './home/home.component';
 import { MenuItemComponent } from './restaurants/restaurant/restaurant-detail/menu/menu-item/menu-item.component';
 import { MenuComponent } from './restaurants/restaurant/restaurant-detail/menu/menu.component';
 import { RestaurantDetailComponent } from './restaurants/restaurant/restaurant-detail/restaurant-detail.component';
+import { ReviewsComponent } from './restaurants/restaurant/restaurant-detail/reviews/reviews.component';
 import { RestaurantComponent } from './restaurants/restaurant/restaurant.component';
 import { RestaurantsComponent } from './restaurants/restaurants.component';
 import { RestaurantsService } from './restaurants/restaurants.service';
 import { ShoppingCartComponent } from './shopping-cart/shopping-cart.component';
-import { ReviewsComponent } from './restaurants/restaurant/restaurant-detail/reviews/reviews.component';
+import { ShoppingCartService } from './shopping-cart/shopping-cart.service';
 
 
 
@@ -38,7 +39,7 @@ import { ReviewsComponent } from './restaurants/restaurant/restaurant-detail/rev
     HttpModule,
     RouterModule.forRoot(ROUTES)
   ],
-  providers: [RestaurantsService],
+  providers: [RestaurantsService, ShoppingCartService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
