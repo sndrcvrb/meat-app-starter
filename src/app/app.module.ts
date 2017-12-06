@@ -4,13 +4,16 @@ import { HttpModule } from '@angular/http';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule } from '@angular/router';
 import { InputComponent } from 'app/shared/input/input.component';
+import { RadioComponent } from 'app/shared/radio/radio.component';
 
 import { AboutComponent } from './about/about.component';
 import { AppComponent } from './app.component';
 import { ROUTES } from './app.routes';
 import { HeaderComponent } from './header/header.component';
 import { HomeComponent } from './home/home.component';
+import { OrderItemsComponent } from './order/order-items/order-items.component';
 import { OrderComponent } from './order/order.component';
+import { OrderService } from './order/order.service';
 import { MenuItemComponent } from './restaurants/restaurant/restaurant-detail/menu/menu-item/menu-item.component';
 import { MenuComponent } from './restaurants/restaurant/restaurant-detail/menu/menu.component';
 import { RestaurantDetailComponent } from './restaurants/restaurant/restaurant-detail/restaurant-detail.component';
@@ -37,7 +40,9 @@ import { ShoppingCartService } from './shopping-cart/shopping-cart.service';
     MenuItemComponent,
     ReviewsComponent,
     OrderComponent,
-    InputComponent
+    InputComponent,
+    RadioComponent,
+    OrderItemsComponent
   ],
   imports: [
     BrowserModule,
@@ -45,7 +50,7 @@ import { ShoppingCartService } from './shopping-cart/shopping-cart.service';
     RouterModule.forRoot(ROUTES),
     FormsModule
   ],
-  providers: [RestaurantsService, ShoppingCartService, { provide: LOCALE_ID, useValue: 'pt-BR'}],
+  providers: [RestaurantsService, ShoppingCartService, OrderService, { provide: LOCALE_ID, useValue: 'pt-BR'}],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
