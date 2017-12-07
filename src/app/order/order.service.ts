@@ -13,6 +13,10 @@ export class OrderService {
     return this.cartService.items;
   }
 
+  total(): number {
+    return this.cartService.total();
+  }
+
   increaseQuantity(item: CartItem) {
     this.cartService.increaseQuantity(item);
   }

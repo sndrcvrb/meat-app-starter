@@ -11,14 +11,20 @@ import { CartItem } from 'app/shopping-cart/cart-item.model';
 export class OrderComponent implements OnInit {
 
   paymentOptions: RadioOption[] = [
-    { label: "Dinheiro", value: "DIN" },
-    { label: "Cartão de crédito", value: "CRE" },
-    { label: "Vale Refeição", value: "REF" }
-  ]
+    { label: 'Dinheiro', value: 'DIN' },
+    { label: 'Cartão de crédito', value: 'CRE' },
+    { label: 'Vale Refeição', value: 'REF' }
+  ];
+
+  shippingFee = 8;
 
   constructor(private orderService: OrderService) {}
 
   ngOnInit() {}
+
+  itemsValue(): number {
+    return this.orderService.total();
+  }
 
   cartItems(): CartItem[] {
     return this.orderService.cartItems();
