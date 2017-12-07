@@ -3,8 +3,6 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule } from '@angular/router';
-import { InputComponent } from 'app/shared/input/input.component';
-import { RadioComponent } from 'app/shared/radio/radio.component';
 
 import { AboutComponent } from './about/about.component';
 import { AppComponent } from './app.component';
@@ -23,6 +21,9 @@ import { ReviewsComponent } from './restaurants/restaurant/restaurant-detail/rev
 import { RestaurantComponent } from './restaurants/restaurant/restaurant.component';
 import { RestaurantsComponent } from './restaurants/restaurants.component';
 import { RestaurantsService } from './restaurants/restaurants.service';
+import { InputComponent } from './shared/input/input.component';
+import { RadioComponent } from './shared/radio/radio.component';
+import { RatingComponent } from './shared/rating/rating.component';
 import { ShoppingCartComponent } from './shopping-cart/shopping-cart.component';
 import { ShoppingCartService } from './shopping-cart/shopping-cart.service';
 
@@ -44,7 +45,8 @@ import { ShoppingCartService } from './shopping-cart/shopping-cart.service';
     RadioComponent,
     OrderItemsComponent,
     OrderTotalComponent,
-    OrderSummaryComponent
+    OrderSummaryComponent,
+    RatingComponent
   ],
   imports: [
     BrowserModule,
