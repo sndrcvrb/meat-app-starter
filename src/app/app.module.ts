@@ -12,6 +12,7 @@ import { ROUTES } from './app.routes';
 import { HeaderComponent } from './header/header.component';
 import { HomeComponent } from './home/home.component';
 import { OrderItemsComponent } from './order/order-items/order-items.component';
+import { OrderSummaryComponent } from './order/order-summary/order-summary.component';
 import { OrderTotalComponent } from './order/order-total/order-total.component';
 import { OrderComponent } from './order/order.component';
 import { OrderService } from './order/order.service';
@@ -42,7 +43,8 @@ import { ShoppingCartService } from './shopping-cart/shopping-cart.service';
     InputComponent,
     RadioComponent,
     OrderItemsComponent,
-    OrderTotalComponent
+    OrderTotalComponent,
+    OrderSummaryComponent
   ],
   imports: [
     BrowserModule,
