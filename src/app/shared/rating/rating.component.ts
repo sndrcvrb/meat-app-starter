@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'mt-rating',
@@ -6,8 +6,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RatingComponent implements OnInit {
 
+  @Output() rated = new EventEmitter<number>();
+
   rates: number[] = [1, 2, 3, 4, 5];
   rate = 0;
+  previousRate: number;
 
   constructor() { }
 
@@ -16,6 +19,22 @@ export class RatingComponent implements OnInit {
 
   setRate(r: number) {
     this.rate = r;
+    this.previousRate = undefined;
+    this.rated.emit(this.rate);
+  }
+
+  setTempRate(r: number) {
+    if (this.previousRate === undefined) {
+      this.previousRate = this.rate;
+    }
+    this.rate = r;
+  }
+
+  clearTempRate() {
+    if (this.previousRate !== undefined) {
+      this.rate = this.previousRate;
+      this.previousRate = undefined;
+    }
   }
 
 }
